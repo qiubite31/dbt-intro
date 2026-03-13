@@ -1,0 +1,23 @@
+
+name: 'my_sqlite_project' # 專案名稱
+version: '1.0.0'           # 專案版本
+config-version: 2          # dbt 配置版本（目前建議為 2）
+
+profile: 'my_sqlite_profile' # 對應 profiles.yml 中的設定名稱
+
+model-paths: ["models"]      # 模型檔案存放路徑
+analysis-paths: ["analyses"] # 分析檔案存放路徑
+test-paths: ["tests"]        # 測試檔案存放路徑
+seed-paths: ["seeds"]        # 種子檔案（CSV）存放路徑
+macro-paths: ["macros"]      # 宏（Macros）檔案存放路徑
+snapshot-paths: ["snapshots"] # 快照檔案存放路徑
+
+target-path: "target"  # 編譯後 SQL 檔案的儲存目錄
+clean-targets:         # 執行 'dbt clean' 時會刪除的目錄
+  - "target"           # 刪除編譯目錄
+  - "dbt_packages"     # 刪除安裝的套件目錄
+
+models:
+  my_sqlite_project:
+    # 專案中所有模型的預設配置
+    materialized: view      # 預設建立為 視圖 (view)，可改為 table
