@@ -8,5 +8,5 @@ my_sqlite_profile: # 配置名稱，需與 dbt_project.yml 中的 profile 一致
       database: 'database' # 資料庫名稱（SQLite 中通常為 database）
       schema: 'main'      # 預設使用的 Schema 名稱
       schemas_and_paths:  # Schema 與資料庫檔案路徑的對應
-        main: 'C:\Users\Drake\Documents\GitHub\dbt-intro\data.db' # main schema 對應的檔案路徑
-      schema_directory: 'C:\Users\Drake\Documents\GitHub\dbt-intro' # 模型檔案所在的目錄
+        main: 'data.db' # main schema 對應的檔案路徑
+      schema_directory: '.' # 模型檔案所在的目錄
